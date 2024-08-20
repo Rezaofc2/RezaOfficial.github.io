@@ -1,17 +1,12 @@
-
-.loading-screen {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: #fff;
-z-index: 9999;
-display: flex;
-justify-content: center;
-align-items: center;
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #7dedff;
 }
-.loading-anime {
-width: 200px;
-height: 200px;
+
+#talents {
+  background-color: #7dedff;
+}
+
+section {
+  padding-top: 5rem;
 }
