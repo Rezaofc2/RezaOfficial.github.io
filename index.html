@@ -96,6 +96,7 @@
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffff" fill-opacity="1" d="M0,256L48,250.7C96,245,192,235,288,197.3C384,160,480,96,576,80C672,64,768,96,864,128C960,160,1056,192,1152,170.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
+<!-- Contact Section -->
 <section id="contact" class="bg-light">
 <div class="container">
 <div class="row justify-content-center">
@@ -106,6 +107,11 @@
 </div>
 <div class="chat-messages" id="chat-messages">
 <!-- Pesan chat akan ditampilkan di sini -->
+<div class="chat-message">
+<span class="chat-username">Anda</span>
+<span class="chat-timestamp">08:20</span>
+<p>Halo, selamat datang di room chat! 😊</p>
+</div>
 </div>
 <div class="chat-input">
 <form id="chat-form">
@@ -118,11 +124,53 @@
 </div>
 </div>
 </section>
-<!-- Akhir Contact -->
-<!-- Awal Footer -->
-<footer class="text-white text-center pb-5" style="background-color: #7C83FD;">
-<p>Created with <i class="bi bi-heart-fill text-danger"></i>by  <a href="https://wa.me/6289606790112" class="text-white fw-bold">Reza Official</a></p>
-</footer>
+<script>
+const chatForm = document.getElementById('chat-form');
+const chatMessages = document.getElementById('chat-messages');
+const messageInput = document.getElementById('message');
+chatForm.addEventListener('submit', (e) => {
+e.preventDefault();
+const message = messageInput.value.trim();
+if (message !== '') {
+sendMessage(message);
+messageInput.value = '';
+}
+});
+function sendMessage(message) {
+const chatMessage = document.createElement('div');
+chatMessage.className = 'chat-message';
+chatMessage.innerHTML = `
+<span class="chat-username">You</span>
+<span class="chat-timestamp">08:20</span>
+<p>${message}</p>
+`;
+chatMessages.appendChild(chatMessage);
+chatMessages.scrollTop = chatMessages.scrollHeight;
+respondToMessage(message);
+}
+function respondToMessage(message) {
+const response = getResponse(message);
+const chatMessage = document.createElement('div');
+chatMessage.className = 'chat-message';
+chatMessage.innerHTML = `
+<span class="chat-username">Fenrys</span>
+<span class="chat-timestamp">08:20</span>
+<p>${response}</p>
+`;
+chatMessages.appendChild(chatMessage);
+chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+function getResponse(message) {
+// TO DO: implement AI response logic here
+// For now, just return a random response
+const responses = [
+'Halo! 😊',
+'Apa kabar?',
+'Saya siap membantu!',
+'Tolong jelaskan lebih lanjut...',
+];
+return responses[Math.floor(Math.random() * responses.length)];
+}
 </script>
 </body>
 </html>
