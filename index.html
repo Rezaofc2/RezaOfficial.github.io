@@ -9,10 +9,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 <body id="home">
-<audio autoplay>
-<source src="https://files.catbox.moe/ioyfyi.mp3" type="audio/mp3">
-Tidak bisa memutar audio? 🎵
-</audio>
 <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top" style="background-color: #7C83FD; padding: 1rem 2rem;">
 <div class="container">
 <a class="navbar-brand" href="#">RezaOffc</a>
@@ -44,6 +40,28 @@ Tidak bisa memutar audio? 🎵
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,85.3C96,75,192,53,288,53.3C384,53,480,75,576,106.7C672,139,768,181,864,181.3C960,181,1056,139,1152,117.3C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 </section>
 <!-- About Section -->
+<div class="music-player">
+<audio id="audio" autoplay loop>
+<source src="https://files.catbox.moe/ioyfyi.mp3" type="audio/mp3">
+Tidak bisa memutar audio? 🎵
+</audio>
+<div class="music-controls">
+<button id="play-pause" class="btn btn-primary">
+<i class="bi bi-play-fill"></i>
+</button>
+<button id="stop" class="btn btn-danger">
+<i class="bi bi-stop-fill"></i>
+</button>
+</div>
+<div class="music-info">
+<p id="song-title">Lagu Sedih</p>
+<p id="song-artist">Reza Official</p>
+</div>
+<div class="music-progress">
+<input type="range" id="progress" value="0" max="100">
+<p id="progress-text">0:00 / 3:20</p>
+</div>
+</div>
 <section id="about">
 <div class="container">
 <div class="row text-center mb-3">
